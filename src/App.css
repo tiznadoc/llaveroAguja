@@ -8,10 +8,3 @@ html,
 body {
   background-color: #7A6FBF;
 }
-
-.App {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}

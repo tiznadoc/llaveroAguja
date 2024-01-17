@@ -1,29 +1,40 @@
 import React from "react";
-import {Navbar,Container,Nav} from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './header.css';
+import SocialMediaLinks from '../SocialMediaLinks';
 
+function Header() {
+    const socialMediaLinks = SocialMediaLinks();
 
-function Header(props) {
     return (
         <header>
-            <Navbar expand="lg">
-                <Container className="navbar">
-                    <Navbar.Brand href="#home">
-                        <img
+            <Navbar expand="lg" className="navbar">
+                <Navbar.Brand href="#home">
+                    <img
                         className="brand-image"
                         src={require(`../images/nobg-logosiosi2.png`)}
                         alt="Llavero Aguja logo"
-                        />
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbar-toggle" />
-                    <Navbar.Collapse className="justify-content-end">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Link</Nav.Link>
+                    />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse className="justify-content-between">
+                    <Nav className="ml-auto">
+                        <Nav.Link className="header-links" href="#home">Home</Nav.Link>
+                        <Nav.Link className="header-links" href="#about">About</Nav.Link>
+                        <Nav.Link className="header-links" href="#catalog">Catalog</Nav.Link>
                     </Nav>
-                    </Navbar.Collapse>
-                </Container>
+                    <Nav className="ml-auto">
+                        {socialMediaLinks.map((media, index) => (
+                            <a href={media.link} target="_blank" rel="noopener noreferrer" key={index}>
+                                <Button className="social-media-header-icons" style={{ backgroundColor: media.color }}>
+                                    <FontAwesomeIcon icon={media.icon} style={{ color: 'white', height: '1.8em' }} />
+                                </Button>
+                            </a>
+                        ))}
+                    </Nav>
+                </Navbar.Collapse>
             </Navbar>
         </header>
     );

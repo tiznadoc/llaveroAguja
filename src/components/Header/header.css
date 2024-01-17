@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+
 header {
     width: 100%;
     height: auto;
@@ -7,15 +9,41 @@ header {
     align-items: center;
     position: fixed;
     top: 0;
+    padding-right: 15px;
 }
 
-/*.navbar nav {
+.navbar {
     width: 100%;
-    min-width: 100%;
     height: auto;
+    background-color: #F2D8DC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-}*/
+    top: 0;
+    padding-right: 30px;
+}
 
 .brand-image {
     width: max(100px, 18vw);
+    margin-left: 15px;
+}
+
+.header-links {
+    font-weight: bold;
+    color: #3530BF;
+    font-family: PT Serif, 'Times New Roman', Times, serif;
+    margin-right: 35px;
+    font-size: 1.2em;
+}
+
+.social-media-header-icons {
+    border-color: #F2D8DC;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
 }
