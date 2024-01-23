@@ -1,13 +1,10 @@
 import React from "react";
-import { Navbar, Nav, Button } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './header.css';
 import SocialMediaLinks from '../SocialMediaLinks';
 
 function Header() {
-    const socialMediaLinks = SocialMediaLinks();
-
     return (
         <header>
             <Navbar expand="lg" className="navbar">
@@ -26,13 +23,7 @@ function Header() {
                         <Nav.Link className="header-links" href="#catalog">Catalog</Nav.Link>
                     </Nav>
                     <Nav className="ml-auto">
-                        {socialMediaLinks.map((media, index) => (
-                            <a href={media.link} target="_blank" rel="noopener noreferrer" key={index}>
-                                <Button className="social-media-header-icons" style={{ backgroundColor: media.color }}>
-                                    <FontAwesomeIcon icon={media.icon} style={{ color: 'white', height: '1.8em' }} />
-                                </Button>
-                            </a>
-                        ))}
+                        <SocialMediaLinks />
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
